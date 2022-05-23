@@ -78,7 +78,7 @@ Do not re-type the common field for `Employee` and `Manager`, instead:
    - Add a concrete `protected storage` variable in the subclasses below it (hint: `LocalStorageItem` will have `localStorage`, and `SessionStorageItem` will be `sessionStorage`).
 3. Use this `abstract storage` in `remove()` to remove the value stored by referencing its `name`.
 4. Make `StorageItem` generic, and take in the generic type in `set()` instead of `any`.
-5. Store the value received as a string, but attach a `nullable` expiration date before setting the value. For example, if we receive `1`, then our resulting object should be `{exp: 10931039310930, "value": 1}`, where `exp` is `Date.now() + this.exp`. If `exp` is `nullish` then our object would look like this: `{exp: undefined, "value": 1}`. Again, this object should be stringified before being set in storage.
+5. Store the value received as a string, but attach a `nullable` expiration date before setting the value. For example, if we receive `1`, then our resulting object should be `{ exp: 10931039310930, "value": 1 }`, where `exp` is `Date.now() + this.exp`. If `exp` is `nullish` then our object would look like this: `{ exp: undefined, "value": 1 }`. Again, this object should be stringified before being set in storage.
 6. Complete the `get` by fulfilling the following requirements:
    1. Get the object from storage.
    2. If it is not `null` then `JSON.parse` it (remember to wrap it in a `try-catch` block).
