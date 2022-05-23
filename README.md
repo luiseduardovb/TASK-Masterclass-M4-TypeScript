@@ -69,4 +69,19 @@ Do not re-type the common field for `Employee` and `Manager`, instead:
 ## Enum Spicy Bonus
 
 1. Use reverse enum mapping to return the name of the enum used in `getScreenName` (e.g., `ScreenSize.lg` -> `lg`).
-2. Properly type `ScreenName` so that it is not `any`.
+2. Properly type `ScreenName` so that it is not `any` (hint: look into using `typeof` and slicing `ScreenSize` with a `type` to reverse map its annotation).
+
+## Generics
+
+1. Go to `src/generics.ts`.
+2. Add a `protected abstract storage` type hint, which implements the shape of a `Storage`.
+   - Add a concrete `protected storage` variable in the subclasses below it (hint: `LocalStorageItem` will have `localStorage`, and `SessionStorageItem` will be `sessionStorage`).
+3. Use this `abstract storage` in `remove()` to remove the value stored by referencing its `name`.
+4. Make `StorageItem` generic, and take in the generic type in `set()` instead of `any`.
+5. Store the value received as a string, but attach a `nullable` expiration date before setting the value. For example, if we receive `1`, then our resulting object should be `{exp: 10931039310930, "value": 1}`, where `exp` is `Date.now() + this.exp`. If `exp` is `nullish` then our object would look like this: `{exp: undefined, "value": 1}`. Again, this object should be stringified before being set in storage.
+6. Complete the `get` by fulfilling the following requirements:
+   1. Get the object from storage.
+   2. If it is not `null` then `JSON.parse` it (remember to wrap it in a `try-catch` block).
+   3. If the parsing was successful, then check the `exp`, if it exceeds `Date.now()` then remove the item using `this.remove()`.
+   4. If it has not expired then **only return the value**, not the entire object.
+   5. If one of the conditions above has not passed, or an exception occurred while parsing then return null.
