@@ -33,3 +33,8 @@ Do not re-type the common field for `Employee` and `Manager`, instead:
 
 1. Have `Employee` "extend" `Person`.
 1. Have `Manager` "extend" `Employee`.
+
+## Interfaces Spicy Bonus
+
+- Experiment inlining the interfaces in `src/interfaces.ts` instead of having them imported elsewhere.
+- Try using `intersections` instead of `extending`.
