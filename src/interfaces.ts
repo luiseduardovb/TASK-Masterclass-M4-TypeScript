@@ -1,18 +1,26 @@
 import { Employee, Manager, Person } from "./models";
 
-function showPeople(people: Person[]): void {
+function showPeople(
+  people: {
+    firstName: string;
+    lastName: string;
+    age: number;
+  }[]
+): void {
   for (const person of people) {
     console.log(person.firstName);
   }
 }
 
-function showEmployees(employees: Employee[]): void {
+function showEmployees(
+  employees: Person & { company: string; position: string }[]
+): void {
   for (const employee of employees) {
     console.log(employee.company);
   }
 }
 
-function showManagers(managers: Manager[]): void {
+function showManagers(managers: Employee & { level: number }[]): void {
   for (const manager of managers) {
     console.log(manager.level);
   }
