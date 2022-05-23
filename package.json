@@ -4,7 +4,7 @@
   "description": "Let's learn some TypeScript!",
   "main": "index.ts",
   "scripts": {
-    "start": "node src/index.ts",
+    "start": "ts-node src/index.ts",
     "test": "jest"
   },
   "repository": {
@@ -29,6 +29,7 @@
     "babel-jest": "^28.1.0",
     "jest": "^28.1.0",
     "prettier": "^2.6.2",
+    "ts-node": "^10.8.0",
     "typescript": "^4.6.4"
   }
 }
