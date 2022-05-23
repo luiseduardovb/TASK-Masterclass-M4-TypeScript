@@ -16,22 +16,22 @@ export function getTemplate(size: ScreenSize): string {
 class Time {
   constructor(public hour: number = 0, public minute: number = 0) {}
 
-  parse(raw: TimeLike): Time {
+  static parse(raw: TimeLike): Time {
     return new Time();
   }
 
   isGreaterThan(other: TimeLike): boolean {
-    const parsed = this.parse(other);
+    const parsed = Time.parse(other);
     return true;
   }
 
   isLesserThan(other: TimeLike): boolean {
-    const parsed = this.parse(other);
+    const parsed = Time.parse(other);
     return true;
   }
 
   isEqual(other: TimeLike): boolean {
-    const parsed = this.parse(other);
+    const parsed = Time.parse(other);
     return true;
   }
 
