@@ -1,0 +1,32 @@
+{
+  "name": "task-masterclass-m4-typescript",
+  "version": "1.0.0",
+  "description": "Let's learn some TypeScript!",
+  "main": "index.ts",
+  "scripts": {
+    "start": "node src/index.ts",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoinCODED/TASK-Masterclass-M4-TypeScript.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JoinCODED/TASK-Masterclass-M4-TypeScript/issues"
+  },
+  "homepage": "https://github.com/JoinCODED/TASK-Masterclass-M4-TypeScript#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.18.0",
+    "@babel/preset-env": "^7.18.0",
+    "@babel/preset-typescript": "^7.17.12",
+    "@tsconfig/recommended": "^1.0.1",
+    "@types/jest": "^27.5.1",
+    "babel-jest": "^28.1.0",
+    "jest": "^28.1.0",
+    "typescript": "^4.6.4"
+  }
+}
