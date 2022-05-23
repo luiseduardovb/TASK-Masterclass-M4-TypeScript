@@ -2,6 +2,11 @@
 
 Let's learn some TypeScript!
 
+## Steps
+
+1. Clone [this repository](https://github.com/JoinCODED/TASK-Masterclass-M4-TypeScript).
+2. Run `npm install`.
+
 ## Interfaces
 
 1. Go to `src/interfaces.ts`, we have some functions to complete.
