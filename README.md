@@ -43,3 +43,30 @@ Do not re-type the common field for `Employee` and `Manager`, instead:
 
 - Experiment inlining the interfaces in `src/interfaces.ts` instead of having them imported elsewhere.
 - Try using `intersections` instead of `extending`.
+
+## Enums and Unions
+
+1. Go to `src/models/screens.ts` and add the following sizes to `ScreenSize`, and **make sure to lower case the names** (hint: these are enum members, do not confuse them with `interfaces`):
+   - **xl**: `number`
+   - **lg**: `number`
+   - **md**: `number`
+   - **sm**: `number`
+   - **xs**: `number`
+2. Add logic to `getTemplate` in `src/unions.ts` to return an appropriate string based on the screen size.
+   - For example, if the `size` is equal to `ScreenSize.lg` we should return `"my-large-template.html"`.
+3. Type `TimeLike` in `src/unions.ts` to be union of a `string` (e.g., `13:00`), `number`, a `Time` object, and a `object` with the following shape `{hour: number; minute: number}`.
+4. Use type narrowing to complete the `parse` method.
+5. Add logic to complete the `isGreaterThan` function.
+6. Add logic to complete the `isLesserThan` function (you may use the `isGreaterThan` and `isEqual` methods to determine a strict `isLesserThan` return value).
+7. Add logic to complete the `isEqual` function.
+
+## Enum Bonus
+
+1. Add a string enum for `Meridian` in `unions.ts`.
+2. Complete the `get meridian` getter method in the `Time` class.
+3. Verify that the console logs are printing the time correctly formatted.
+
+## Enum Spicy Bonus
+
+1. Use reverse enum mapping to return the name of the enum used in `getScreenName` (e.g., `ScreenSize.lg` -> `lg`).
+2. Properly type `ScreenName` so that it is not `any`.
